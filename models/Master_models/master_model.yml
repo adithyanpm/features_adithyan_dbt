@@ -37,7 +37,7 @@ models:
         description: Category code of the product
         tests:
           - accepted_values:
-              values: ['SNACKS','CEREALS','PRINGLES']
+              values: ['SNACKS','CEREALS','PRINGLES','INVALID']
       - name: prod_nm
         description: Product name of the product master model
       - name: prod_pricing
