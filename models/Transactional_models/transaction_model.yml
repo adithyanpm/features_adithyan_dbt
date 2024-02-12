@@ -1,0 +1,10 @@
+version: 2
+ 
+models:
+  - name: month_invoice
+    description: Monthly Invoice table
+    columns:
+      - name: zone
+        description: Describes the Zone of the region
+        tests:
+          - contains_values

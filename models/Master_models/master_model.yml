@@ -1,0 +1,50 @@
+version: 2
+ 
+models:
+  - name: cust_mstr
+    description: Customer Master table
+    columns:
+      - name: cust_nbr
+        description: primary key of the customer master model
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('cust_mstr_kna1')
+              field: cust_number
+              severity: warn
+      - name: cust_nm
+        description: Customer Name of the customer master model
+      - name: cust_loc
+        description: Customer Location of the customer master model
+      - name: cust_ctry_nm
+        description: Customer Country Name of the customer master model
+      - name: ctry_cd
+        description: Country Code of the customer master model              
+  - name: prod_mstr
+    description: Product Master table
+    columns:
+      - name: prod_id
+        description: primary key of the product master model
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('prod_mstr_pna1')
+              field: product_id
+              severity: warn
+      - name: catg_cd
+        description: Category code of the product
+        tests:
+          - accepted_values:
+              values: ['SNACKS','CEREALS','PRINGLES']
+      - name: prod_nm
+        description: Product name of the product master model
+      - name: prod_pricing
+        description: Product pricing of the product master model
+      - name: prod_margin
+        description: Product margin of the product master model
+      - name: prod_date
+        description: Prod Date of the product master model
+      - name: catg_cd
+        description: Category code of the product master model
